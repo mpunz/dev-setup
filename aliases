@@ -1,0 +1,20 @@
+alias vim=nvim
+export EDITOR=nvim
+#
+#alias gnb='git checkout master && git pull origin master && git checkout -b '
+#alias gpo='git_push_origin_branch'
+#alias glp='git_log_pretty_oneline '
+#
+#function git_log_pretty_oneline () {
+#	git log --pretty=oneline | head -n $1
+#}
+#
+#function git_push_origin_branch {
+#	cb=$(git branch | grep "\*" | cut -d ' ' -f 2)
+#	if [ $cb == 'master' ]
+#	then
+#		echo 'no'
+#	else
+#		git push origin $cb
+#	fi
+#}
