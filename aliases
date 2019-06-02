@@ -2,6 +2,7 @@ alias vim=nvim
 export EDITOR=nvim
 
 alias gcb="git_current_branch"
+alist gpo="git_push_origin"
 #
 #alias gnb='git checkout master && git pull origin master && git checkout -b '
 #alias gpo='git_push_origin_branch'
