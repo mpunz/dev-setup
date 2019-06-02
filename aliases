@@ -3,8 +3,8 @@ export EDITOR=nvim
 
 alias gcb="git_current_branch"
 alias gpo="git_push_origin"
-#
-#alias gnb='git checkout master && git pull origin master && git checkout -b '
+alias gnb='git_checkout_master && git_pull_origin_master && git_new_branch '
+
 #alias gpo='git_push_origin_branch'
 #alias glp='git_log_pretty_oneline '
 #

@@ -5,10 +5,33 @@ import sys
 import shell
 
 
+def checkout(branch):
+    cmd = "git checkout {}".format(branch)
+    return shell.run(cmd)
+
+
+def checkout_new_branch(branch):
+    cmd = "git checkout -b {}".format(branch)
+    return shell.run(cmd)
+
+
+def checkout_master():
+    return checkout("master")
+
+
 def porcelain():
     cmd = "git status --porcelain"
     result = shell.run(cmd)
     return not bool(result.stdout)
+
+
+def pull_origin(branch):
+    cmd = "git pull origin {}".format(branch)
+    return shell.run(cmd)
+
+
+def pull_origin_master():
+    return pull_origin("master")
 
 
 def push(branch, force=True):
