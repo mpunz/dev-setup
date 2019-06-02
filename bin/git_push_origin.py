@@ -1,6 +1,7 @@
 #!/home/michael/venv/utilities/bin/python
 
 import argparse
+import sys
 
 import git
 import git_current_branch
@@ -8,7 +9,11 @@ import git_current_branch
 
 def run(force):
     current_branch = git_current_branch.get()
-    git.push(current_branch, force)
+    result = git.push(current_branch, force)
+    if result.stdout:
+        sys.stdout.write(result.stdout)
+    if result.stderr:
+        sys.stdout.write(result.stderr)
 
 
 if __name__ == "__main__":

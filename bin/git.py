@@ -19,4 +19,4 @@ def push(branch, force=True):
             sys.stdout.write("Did not confirm. Quitting.\n")
             return
         cmd += " --force"
-    shell.run(cmd)
+    return shell.run(cmd)
