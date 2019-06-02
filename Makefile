@@ -11,6 +11,13 @@ neovim:
 	cd neovim && make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=${HOME}/bin/neovim" && make install
 	rm -rf neovim
 	rm -rf ~/.config/nvim/*
+
+neovim-python3:
+	rm -rf ~/venv/neovim/neovim3
+	mkdir -p ~/venv/neovim/neovim3
+	python3 -m venv ~/venv/neovim/neovim3
+	~/venv/neovim/neovim3/bin/pip install --upgrade pip
+	~/venv/neovim/neovim3/bin/pip install neovim
 	
 pathogen:
 	mkdir -p ~/.config/nvim/autoload
@@ -23,4 +30,4 @@ dot:
 	@cp aliases ${HOME}/.aliases
 	@cp init.vim ${HOME}/.config/nvim/init.vim
 
-editor: neovim pathogen
+editor: neovim neovim-python3 pathogen
