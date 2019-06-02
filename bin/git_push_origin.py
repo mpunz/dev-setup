@@ -9,6 +9,9 @@ import git_current_branch
 
 def run(force):
     current_branch = git_current_branch.get()
+    if current_branch == "master":
+        sys.stdout.write("Current branch is `master`. This is not allowed. Quitting....\n")
+
     result = git.push(current_branch, force)
     if result.stdout:
         sys.stdout.write(result.stdout)
