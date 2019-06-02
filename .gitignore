@@ -1,2 +1,4 @@
 *.sw*
 .mypy_cache/
+*.pyc
+__pycache__

@@ -1,6 +1,6 @@
 .PHONY: neovim
 
-all: editor dot
+all: editor utilities dot
 
 
 # EDITOR
@@ -37,6 +37,25 @@ neovim-packages:
 	cd ~/.config/nvim/bundle && git clone https://github.com/neomake/neomake.git
 
 editor: neovim neovim-python3 neovim-package-manager neovim-packages
+
+
+# UTILITIES
+
+utilities-python:
+	rm -rf ~/venv/utilities
+	mkdir -p ~/venv/utilities
+	python3 -m venv ~/venv/utilities
+	~/venv/utilities/bin/pip install --upgrade pip
+	~/venv/utilities/bin/pip install attrs
+
+utilities-copy:
+	rm -rf ~/bin/utils
+	mkdir -p ~/bin/utils
+	cp bin/*.py ~/bin/utils
+	bin/make_symlinks.sh ~/bin/utils
+
+utilities: utilities-python utilities-copy
+
 
 
 # DOTFILES
