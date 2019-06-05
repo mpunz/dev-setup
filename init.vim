@@ -1,5 +1,9 @@
 execute pathogen#infect()
 
+set ruler
+set number
+set path=.,/usr/include,,**
+
 filetype plugin indent on
 syntax on
 
