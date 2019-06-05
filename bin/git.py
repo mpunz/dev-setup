@@ -19,6 +19,11 @@ def checkout_master():
     return checkout("master")
 
 
+def log():
+    cmd = "git log --pretty=oneline"
+    return shell.run(cmd)
+
+
 def porcelain():
     cmd = "git status --porcelain"
     result = shell.run(cmd)
