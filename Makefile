@@ -65,4 +65,3 @@ dot:
 	@cp bashrc ${HOME}/.bashrc
 	@cp aliases ${HOME}/.aliases
 	@cp init.vim ${HOME}/.config/nvim/init.vim
-
